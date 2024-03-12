@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "impactful_end:enderite_ingot"
+  },
+  "base": {
+    "item": "minecraft:crossbow"
+  },
+  "result": {
+    "item": "impactful_end:enderite_crossbow"
+  },
+  "template": {
+    "item": "impactful_end:enderite_upgrade_smithing_template"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "item.impactful_end.enderite_ingot": "Enderite Ingot",
+  "item.impactful_end.enderference_crystal": "Enderference Crystal",
+  "item.impactful_end.enderite_upgrade_smithing_template": "Smithing Template",
+  "item.impactful_end.enderite_bow": "Enderite Bow",
+  "item.impactful_end.enderite_crossbow": "Enderite Crossbow",
+  "block.impactful_end.enderite_block": "Block of Enderite",
+  "block.impactful_end.end_crystal_ore": "End Crystal Ore",
+  "block.impactful_end.choralite_accumulation": "Choralite Accumulation",
+  "block.impactful_end.purpur_panel": "Purpur Panel",
+  "item.impactful_end.smithing_template.enderite_upgrade.additions_slot_description": "Add Enderite Ingot",
+  "item.impactful_end.smithing_template.enderite_upgrade.applies_to": "Bows and Crossbows",
+  "item.impactful_end.smithing_template.enderite_upgrade.base_slot_description": "Add Bow or Crossbow",
+  "item.impactful_end.smithing_template.enderite_upgrade.ingredients": "Enderite Ingot",
+  "item.impactful_end.sail_armor_trim_smithing_template": "Smithing Template",
+  "trim_pattern.impactful_end.sail": "Sail Armor Trim",
+  "upgrade.impactful_end.enderite_upgrade": "Enderite Upgrade"
+}

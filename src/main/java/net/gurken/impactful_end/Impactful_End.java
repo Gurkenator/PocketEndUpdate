@@ -1,6 +1,10 @@
 package net.gurken.impactful_end;
 
 import com.mojang.logging.LogUtils;
+import net.gurken.impactful_end.block.ModBlocks;
+import net.gurken.impactful_end.item.ModItemProperties;
+import net.gurken.impactful_end.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -28,6 +32,9 @@ public class Impactful_End
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -47,8 +54,29 @@ public class Impactful_End
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.ENDERITE_INGOT);
+            event.accept(ModItems.ENDERFERENCE_CRYSTAL);
+            event.accept(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE);
+            event.accept(ModItems.SAIL_ARMOR_TRIM_SMITHING_TEMPLATE);
+        }
 
+    if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.ENDERITE_BLOCK);
+            event.accept(ModBlocks.PURPUR_PANEL);
+        }
+
+    if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.CHORALITE_ACCUMULATION);
+            event.accept(ModBlocks.END_CRYSTAL_ORE);
+        }
+
+    if(event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.ENDERITE_BOW);
+            event.accept(ModItems.ENDERITE_CROSSBOW);
+        }
     }
+
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -62,6 +90,9 @@ public class Impactful_End
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                ModItemProperties.addCustomItemProperties();
+            });
         }
     }
 }

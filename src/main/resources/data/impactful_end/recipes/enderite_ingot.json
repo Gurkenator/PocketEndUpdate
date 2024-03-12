@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "enderite_ingot",
+  "ingredients": [
+    {
+      "item": "minecraft:dragon_breath"
+    },
+    {
+      "item": "impactful_end:enderference_crystal"
+    },
+    {
+      "item": "impactful_end:enderference_crystal"
+    },
+    {
+      "item": "impactful_end:enderference_crystal"
+    },
+    {
+      "item": "impactful_end:enderference_crystal"
+    }
+  ],
+  "result": {
+    "item": "impactful_end:enderite_ingot"
+  }
+}
