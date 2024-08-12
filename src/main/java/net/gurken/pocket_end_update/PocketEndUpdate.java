@@ -3,7 +3,6 @@ package net.gurken.pocket_end_update;
 import com.mojang.logging.LogUtils;
 import net.gurken.pocket_end_update.alchemy.ModPotionBrewing;
 import net.gurken.pocket_end_update.block.ModBlocks;
-import net.gurken.pocket_end_update.datagen.ModProcessorLists;
 import net.gurken.pocket_end_update.entity.ModEntities;
 import net.gurken.pocket_end_update.entity.client.EnderruinRenderer;
 import net.gurken.pocket_end_update.init.ModFeatures;
@@ -59,7 +58,7 @@ public class PocketEndUpdate
         ModFeatures.FEATURES.register(modEventBus);
 
         //Register Processor Lists
-        ModProcessorLists.PROCESSOR_LISTS.register(modEventBus);
+        //ModProcessorLists.PROCESSOR_LISTS.register(modEventBus);
 
         //Register Entities
         ModEntities.register(modEventBus);

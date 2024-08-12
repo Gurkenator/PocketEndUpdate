@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#pocket_end_update:is_outer_end",
-  "features": "pocket_end_update:extra_end_island_placed",
-  "step": "raw_generation"
-}

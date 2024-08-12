@@ -30,10 +30,10 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CHORALITE_ACCUMULATION_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
-        context.register(ADD_EXTRA_END_ISLAND, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(ModBiomeTags.IS_OUTER_END),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.EXTRA_END_ISLAND_PLACED_KEY)),
-                GenerationStep.Decoration.RAW_GENERATION));
+        //context.register(ADD_EXTRA_END_ISLAND, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+        //        biomes.getOrThrow(ModBiomeTags.IS_OUTER_END),
+        //        HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.EXTRA_END_ISLAND_PLACED_KEY)),
+        //       GenerationStep.Decoration.RAW_GENERATION));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
