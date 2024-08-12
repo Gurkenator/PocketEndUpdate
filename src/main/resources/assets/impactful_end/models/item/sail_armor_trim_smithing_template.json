@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "impactful_end:item/sail_armor_trim_smithing_template"
-  }
-}

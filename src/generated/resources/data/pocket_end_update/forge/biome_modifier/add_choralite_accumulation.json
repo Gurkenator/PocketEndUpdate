@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#pocket_end_update:is_outer_end",
+  "features": "pocket_end_update:choralite_accumulation_placed",
+  "step": "vegetal_decoration"
+}

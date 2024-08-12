@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "impactful_end:block/end_crystal_ore"
-  }
-}

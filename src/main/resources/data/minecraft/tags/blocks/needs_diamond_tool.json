@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "impactful_end:enderite_block",
-    "impactful_end:end_crystal_ore"
+    "pocket_end_update:enderite_block",
+    "pocket_end_update:end_crystal_ore"
   ]
 }

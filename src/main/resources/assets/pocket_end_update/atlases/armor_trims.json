@@ -1,0 +1,11 @@
+{
+    "sources": [
+        {
+            "type": "paletted_permutations",
+            "textures": [
+                "pocket_end_update:trims/models/armor/sail",
+                "pocket_end_update:trims/models/armor/sail_leggings"
+            ]
+        }
+    ]
+}

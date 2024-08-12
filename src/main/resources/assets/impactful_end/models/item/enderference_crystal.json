@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "impactful_end:item/enderference_crystal"
-  }
-}

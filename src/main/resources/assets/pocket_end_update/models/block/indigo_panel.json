@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "pocket_end_update:block/indigo_panel"
+  }
+}

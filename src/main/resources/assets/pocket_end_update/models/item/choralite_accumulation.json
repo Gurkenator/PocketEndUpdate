@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "pocket_end_update:block/choralite_accumulation"
+  }
+}

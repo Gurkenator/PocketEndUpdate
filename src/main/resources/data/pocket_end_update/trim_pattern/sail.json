@@ -1,0 +1,7 @@
+{
+  "asset_id": "pocket_end_update:sail",
+  "description": {
+    "translate": "trim_pattern.pocket_end_update.sail"
+  },
+  "template_item": "pocket_end_update:sail_armor_trim_smithing_template"
+}

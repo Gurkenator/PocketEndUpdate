@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pocket_end_update:block/indigo_slab"
+    },
+    "type=double": {
+      "model": "pocket_end_update:block/indigo_block"
+    },
+    "type=top": {
+      "model": "pocket_end_update:block/indigo_slab_top"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:purpur_block"
+    }
+  },
+  "result": {
+    "count": 4,
+    "item": "pocket_end_update:purpur_panel"
+  }
+}

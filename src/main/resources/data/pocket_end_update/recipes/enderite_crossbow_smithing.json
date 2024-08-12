@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "pocket_end_update:enderite_ingot"
+  },
+  "base": {
+    "item": "minecraft:crossbow"
+  },
+  "result": {
+    "item": "pocket_end_update:enderite_crossbow"
+  },
+  "template": {
+    "item": "pocket_end_update:enderite_upgrade_smithing_template"
+  }
+}

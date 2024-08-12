@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_indigo_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pocket_end_update:indigo_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_indigo_panel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pocket_end_update:indigo_panel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pocket_end_update:indigo_panel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_indigo_block",
+      "has_indigo_panel",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pocket_end_update:indigo_panel"
+    ]
+  },
+  "sends_telemetry_event": false
+}

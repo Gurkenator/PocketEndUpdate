@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "F": {
+      "item": "pocket_end_update:cracked_choralite_kernel"
+    }
+  },
+  "pattern": [
+    "FF",
+    "FF"
+  ],
+  "result": {
+    "count": 4,
+    "item": "pocket_end_update:indigo_block"
+  },
+  "show_notification": true
+}

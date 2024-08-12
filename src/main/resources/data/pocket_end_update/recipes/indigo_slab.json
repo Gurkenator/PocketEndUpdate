@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": [
+      {
+        "item": "pocket_end_update:indigo_block"
+      },
+      {
+        "item": "pocket_end_update:indigo_pillar"
+      }
+    ]
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "pocket_end_update:indigo_slab"
+  },
+  "show_notification": true
+}

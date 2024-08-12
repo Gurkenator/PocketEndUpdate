@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "pocket_end_update:indigo_block"
+  },
+  "result": "pocket_end_update:indigo_slab"
+}

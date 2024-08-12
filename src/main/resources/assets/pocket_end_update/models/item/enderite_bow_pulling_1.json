@@ -1,0 +1,6 @@
+{
+    "parent": "pocket_end_update:item/enderite_bow",
+    "textures": {
+        "layer0": "pocket_end_update:item/enderite_bow_pulling_1"
+    }
+}

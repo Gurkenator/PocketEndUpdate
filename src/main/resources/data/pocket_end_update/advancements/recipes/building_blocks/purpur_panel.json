@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_purpur_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:purpur_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_purpur_panel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pocket_end_update:purpur_panel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pocket_end_update:purpur_panel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_purpur_block",
+      "has_purpur_panel",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pocket_end_update:purpur_panel"
+    ]
+  },
+  "sends_telemetry_event": false
+}

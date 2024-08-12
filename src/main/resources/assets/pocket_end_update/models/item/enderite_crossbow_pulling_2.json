@@ -1,0 +1,6 @@
+{
+    "parent": "item/crossbow",
+    "textures": {
+        "layer0": "pocket_end_update:item/enderite_crossbow_pulling_2"
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#pocket_end_update:is_outer_end",
+  "features": "pocket_end_update:end_crystal_ore_placed",
+  "step": "underground_ores"
+}

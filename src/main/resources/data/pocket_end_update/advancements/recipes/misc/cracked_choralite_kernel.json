@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_choralite_kernel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pocket_end_update:choralite_kernel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pocket_end_update:cracked_choralite_kernel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_choralite_kernel",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pocket_end_update:cracked_choralite_kernel"
+    ]
+  },
+  "sends_telemetry_event": false
+}
