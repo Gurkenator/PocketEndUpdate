@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "pocket_end_update:block/end_crystal_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "pocket_end_update:block/end_crystal"
+    },
+    "axis=z": {
+      "model": "pocket_end_update:block/end_crystal_horizontal",
+      "x": 90
+    }
+  }
+}

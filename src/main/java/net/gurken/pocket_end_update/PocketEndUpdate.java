@@ -100,6 +100,7 @@ public class PocketEndUpdate
         }
 
     if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.END_CRYSTAL);
             event.accept(ModBlocks.CHORALITE_ACCUMULATION);
             event.accept(ModItems.CHORALITE_SPORES);
             event.accept(ModBlocks.END_CRYSTAL_ORE);

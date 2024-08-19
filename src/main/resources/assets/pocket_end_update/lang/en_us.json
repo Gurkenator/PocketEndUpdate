@@ -1,6 +1,6 @@
 {
   "item.pocket_end_update.enderite_ingot": "Enderite Ingot",
-  "item.pocket_end_update.enderference_crystal": "Enderference Crystal",
+  "item.pocket_end_update.enderference_crystal": "Enderference Fragment",
   "item.pocket_end_update.enderite_upgrade_smithing_template": "Smithing Template",
   "item.pocket_end_update.enderite_bow": "Enderite Bow",
   "item.pocket_end_update.enderite_crossbow": "Enderite Crossbow",
@@ -8,8 +8,9 @@
   "item.pocket_end_update.choralite_kernel": "Choralite Kernel",
   "item.pocket_end_update.cracked_choralite_kernel": "Cracked Choralite Kernel",
   "block.pocket_end_update.enderite_block": "Block of Enderite",
-  "block.pocket_end_update.end_crystal_ore": "End Crystal Ore",
+  "block.pocket_end_update.end_crystal_ore": "Enderference Deposit",
   "block.pocket_end_update.choralite_accumulation": "Choralite Accumulation",
+  "block.pocket_end_update.end_crystal": "End Crystal",
   "block.pocket_end_update.purpur_panel": "Purpur Panel",
   "block.pocket_end_update.indigo_block": "Indigo Block",
   "block.pocket_end_update.indigo_pillar": "Indigo Pillar",

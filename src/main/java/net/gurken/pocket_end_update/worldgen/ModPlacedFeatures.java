@@ -3,12 +3,14 @@ package net.gurken.pocket_end_update.worldgen;
 import net.gurken.pocket_end_update.PocketEndUpdate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -16,8 +18,8 @@ import java.util.List;
 
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> END_CRYSTAL_ORE_PLACED_KEY = registerKey("end_crystal_ore_placed");
-
     public static final ResourceKey<PlacedFeature> CHORALITE_ACCUMULATION_PLACED_KEY = registerKey("choralite_accumulation_placed");
+    public static final ResourceKey<PlacedFeature> END_CRYSTALS_PLACED_KEY = registerKey("end_crystals_placed");
     //public static final ResourceKey<PlacedFeature> EXTRA_END_ISLAND_PLACED_KEY = registerKey("extra_end_island_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -29,6 +31,11 @@ public class ModPlacedFeatures {
 
         register(context, CHORALITE_ACCUMULATION_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CHORALITE_ACCUMULATION_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+
+        register(context, END_CRYSTALS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_CRYSTALS_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(5), VerticalAnchor.aboveBottom(50)),
+                        BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.solid(new Vec3i(0, 1, 0)))));
 
         //register(context, EXTRA_END_ISLAND_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EXTRA_END_ISLAND_KEY),
         //        List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));

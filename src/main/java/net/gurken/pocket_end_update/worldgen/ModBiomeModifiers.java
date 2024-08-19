@@ -14,6 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_END_CRYSTAL_ORE = registerKey("add_end_crystal_ore");
     public static final ResourceKey<BiomeModifier> ADD_CHORALITE_ACCUMULATION = registerKey("add_choralite_accumulation");
+    public static final ResourceKey<BiomeModifier> ADD_END_CRYSTALS = registerKey("add_end_crystals");
     public static final ResourceKey<BiomeModifier> ADD_EXTRA_END_ISLAND = registerKey("add_extra_end_island");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
@@ -29,6 +30,11 @@ public class ModBiomeModifiers {
                 biomes.getOrThrow(ModBiomeTags.IS_OUTER_END),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CHORALITE_ACCUMULATION_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_END_CRYSTALS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(ModBiomeTags.IS_OUTER_END),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.END_CRYSTALS_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_DECORATION));
 
         //context.register(ADD_EXTRA_END_ISLAND, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
         //        biomes.getOrThrow(ModBiomeTags.IS_OUTER_END),

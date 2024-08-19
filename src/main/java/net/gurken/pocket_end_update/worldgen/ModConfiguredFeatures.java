@@ -2,27 +2,34 @@ package net.gurken.pocket_end_update.worldgen;
 
 import net.gurken.pocket_end_update.PocketEndUpdate;
 import net.gurken.pocket_end_update.block.ModBlocks;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
 
+import java.util.List;
+
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_CRYSTAL_ORE_KEY = registerKey("end_crystal_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CHORALITE_ACCUMULATION_KEY = registerKey("choralite_accumulation");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> END_CRYSTALS_KEY = registerKey("end_crystals");
     //public static final ResourceKey<ConfiguredFeature<?, ?>> EXTRA_END_ISLAND_KEY = registerKey("extra_end_island");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -39,6 +46,11 @@ public class ModConfiguredFeatures {
         register(context, CHORALITE_ACCUMULATION_KEY, Feature.FLOWER,
                 new RandomPatchConfiguration(32, 6, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                         new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CHORALITE_ACCUMULATION.get())))));
+
+        register(context, END_CRYSTALS_KEY, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration
+                .layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
+                        .add(UniformInt.of(3, 7), 2).build()), BlockStateProvider.simple(ModBlocks.END_CRYSTAL.get().defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Y))), BlockColumnConfiguration.layer(UniformInt.of(1, 2), BlockStateProvider.simple(ModBlocks.END_CRYSTAL.get().defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Y)))),
+                Direction.DOWN, BlockPredicate.matchesBlocks(List.of(Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR)),false));
 
         //register(context, EXTRA_END_ISLAND_KEY, ModFeatures.EXTRA_END_ISLAND.get(),
         //        new StructuralFeatureConfiguration(list, list1, holder, holdergetter1.getOrThrow(ModProcessorLists.END_CRYSTAL_ADDITION), 4));

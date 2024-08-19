@@ -4,7 +4,6 @@ import net.gurken.pocket_end_update.PocketEndUpdate;
 import net.gurken.pocket_end_update.block.custom.ChoraliteCropBlock;
 import net.gurken.pocket_end_update.block.custom.ChoralitePlantBlock;
 import net.gurken.pocket_end_update.item.ModItems;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -24,7 +23,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> ENDERITE_BLOCK = registerBlock("enderite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).mapColor(MapColor.SAND)));
     public static final RegistryObject<Block> END_CRYSTAL_ORE = registerBlock("end_crystal_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS).mapColor(MapColor.SAND), UniformInt.of(12, 16)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS).mapColor(MapColor.TERRACOTTA_BLUE)));
     public static final RegistryObject<Block> PURPUR_PANEL = registerBlock("purpur_panel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
     public static final RegistryObject<Block> CHORALITE_ACCUMULATION = registerBlock("choralite_accumulation",
@@ -33,6 +32,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHORALITE_GROWTH = registerBlock("choralite_growth",
             () -> new ChoraliteCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).lightLevel((p_50892_) -> {
                 return 5; }).randomTicks()));
+    public static final RegistryObject<Block> END_CRYSTAL = registerBlock("end_crystal",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.PEARLESCENT_FROGLIGHT).mapColor(MapColor.COLOR_LIGHT_BLUE)));
+
 
     public static final RegistryObject<Block> INDIGO_BLOCK = registerBlock("indigo_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK).mapColor(MapColor.COLOR_LIGHT_BLUE)));
@@ -40,7 +42,6 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.PURPUR_PILLAR).mapColor(MapColor.COLOR_LIGHT_BLUE)));
     public static final RegistryObject<Block> INDIGO_PANEL = registerBlock("indigo_panel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK).mapColor(MapColor.COLOR_LIGHT_BLUE)));
-
     public static final RegistryObject<Block> INDIGO_STAIRS = registerBlock("indigo_stairs",
             () -> new StairBlock(() -> ModBlocks.INDIGO_BLOCK.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.PURPUR_STAIRS).mapColor(MapColor.COLOR_LIGHT_BLUE)));
     public static final RegistryObject<Block> INDIGO_SLAB = registerBlock("indigo_slab",
