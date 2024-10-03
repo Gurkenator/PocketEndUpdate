@@ -32,7 +32,7 @@ public class ModBiomeModifiers {
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_END_CRYSTALS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(ModBiomeTags.IS_OUTER_END),
+                biomes.getOrThrow(ModBiomeTags.IS_OUTER_ISLAND),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.END_CRYSTALS_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_DECORATION));
 

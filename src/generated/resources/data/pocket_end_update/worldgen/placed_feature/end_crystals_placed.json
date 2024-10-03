@@ -13,15 +13,12 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "above_bottom": 50
+          "above_bottom": 35
         },
         "min_inclusive": {
           "above_bottom": 5
         }
       }
-    },
-    {
-      "type": "minecraft:biome"
     },
     {
       "type": "minecraft:block_predicate_filter",
@@ -33,6 +30,9 @@
           0
         ]
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

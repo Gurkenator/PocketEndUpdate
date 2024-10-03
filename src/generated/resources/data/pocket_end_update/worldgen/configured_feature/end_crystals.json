@@ -1,61 +1,67 @@
 {
-  "type": "minecraft:block_column",
+  "type": "minecraft:random_patch",
   "config": {
-    "allowed_placement": {
-      "type": "minecraft:matching_blocks",
-      "blocks": [
-        "minecraft:air",
-        "minecraft:cave_air",
-        "minecraft:void_air"
-      ]
-    },
-    "direction": "down",
-    "layers": [
-      {
-        "height": {
-          "type": "minecraft:weighted_list",
-          "distribution": [
+    "feature": {
+      "feature": {
+        "type": "minecraft:block_column",
+        "config": {
+          "allowed_placement": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": [
+                  "minecraft:air",
+                  "minecraft:cave_air",
+                  "minecraft:void_air"
+                ]
+              }
+            ]
+          },
+          "direction": "down",
+          "layers": [
             {
-              "data": {
-                "type": "minecraft:uniform",
-                "value": {
-                  "max_inclusive": 7,
-                  "min_inclusive": 3
-                }
+              "height": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": {
+                      "type": "minecraft:uniform",
+                      "value": {
+                        "max_inclusive": 6,
+                        "min_inclusive": 3
+                      }
+                    },
+                    "weight": 2
+                  }
+                ]
               },
-              "weight": 2
+              "provider": {
+                "type": "minecraft:simple_state_provider",
+                "state": {
+                  "Name": "pocket_end_update:end_crystal",
+                  "Properties": {
+                    "axis": "y"
+                  }
+                }
+              }
             }
-          ]
-        },
-        "provider": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "pocket_end_update:end_crystal",
-            "Properties": {
-              "axis": "y"
-            }
-          }
+          ],
+          "prioritize_tip": false
         }
       },
-      {
-        "height": {
-          "type": "minecraft:uniform",
-          "value": {
-            "max_inclusive": 2,
-            "min_inclusive": 1
-          }
-        },
-        "provider": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "pocket_end_update:end_crystal",
-            "Properties": {
-              "axis": "y"
-            }
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
           }
         }
-      }
-    ],
-    "prioritize_tip": false
+      ]
+    },
+    "tries": 24,
+    "xz_spread": 2,
+    "y_spread": 2
   }
 }

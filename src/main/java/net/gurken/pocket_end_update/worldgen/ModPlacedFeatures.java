@@ -34,8 +34,9 @@ public class ModPlacedFeatures {
 
         register(context, END_CRYSTALS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_CRYSTALS_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(5), VerticalAnchor.aboveBottom(50)),
-                        BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.solid(new Vec3i(0, 1, 0)))));
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(5), VerticalAnchor.aboveBottom(35)),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.solid(new Vec3i(0, 1, 0))),
+                        BiomeFilter.biome()));
 
         //register(context, EXTRA_END_ISLAND_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EXTRA_END_ISLAND_KEY),
         //        List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));

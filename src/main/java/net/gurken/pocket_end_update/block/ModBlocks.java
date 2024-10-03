@@ -27,11 +27,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> PURPUR_PANEL = registerBlock("purpur_panel",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)));
     public static final RegistryObject<Block> CHORALITE_ACCUMULATION = registerBlock("choralite_accumulation",
-            () -> new ChoralitePlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).mapColor(MapColor.COLOR_PURPLE).offsetType(BlockBehaviour.OffsetType.XZ).forceSolidOn().lightLevel((p_50892_) -> {
-                return 3; })));
+            () -> new ChoralitePlantBlock(BlockBehaviour.Properties.copy(Blocks.CHORUS_PLANT).mapColor(MapColor.COLOR_PURPLE).forceSolidOn().lightLevel((p_50892_) -> {
+                return 6; })));
     public static final RegistryObject<Block> CHORALITE_GROWTH = registerBlock("choralite_growth",
             () -> new ChoraliteCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).lightLevel((p_50892_) -> {
-                return 5; }).randomTicks()));
+                return 4; }).randomTicks()));
     public static final RegistryObject<Block> END_CRYSTAL = registerBlock("end_crystal",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.PEARLESCENT_FROGLIGHT).mapColor(MapColor.COLOR_LIGHT_BLUE)));
 

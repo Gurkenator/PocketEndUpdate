@@ -4,6 +4,7 @@ import net.gurken.pocket_end_update.PocketEndUpdate;
 import net.gurken.pocket_end_update.block.ModBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -47,10 +48,17 @@ public class ModConfiguredFeatures {
                 new RandomPatchConfiguration(32, 6, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                         new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CHORALITE_ACCUMULATION.get())))));
 
-        register(context, END_CRYSTALS_KEY, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration
-                .layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
-                        .add(UniformInt.of(3, 7), 2).build()), BlockStateProvider.simple(ModBlocks.END_CRYSTAL.get().defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Y))), BlockColumnConfiguration.layer(UniformInt.of(1, 2), BlockStateProvider.simple(ModBlocks.END_CRYSTAL.get().defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Y)))),
-                Direction.DOWN, BlockPredicate.matchesBlocks(List.of(Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR)),false));
+        register(context, END_CRYSTALS_KEY, Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(24, 2, 2, PlacementUtils.onlyWhenEmpty(Feature.BLOCK_COLUMN,
+                        new BlockColumnConfiguration(List.of(BlockColumnConfiguration
+                        .layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
+                        .add(UniformInt.of(3, 6), 2).build()),
+                                BlockStateProvider.simple(ModBlocks.END_CRYSTAL.get().defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Y)))),
+                                Direction.DOWN, BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, 0, 0), List.of(Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR))),false))));
+
+                                //BlockPredicate.matchesBlocks(new Vec3i(0, 1, 0), List.of(Blocks.END_STONE, ModBlocks.END_CRYSTAL_ORE.get(), ModBlocks.END_CRYSTAL.get())),false))));
+                                //BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, 0, 0), List.of(Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR))),true))));
+                                //BlockPredicate.matchesBlocks(new Vec3i(0, 0, 0), List.of(Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR)),false))));
 
         //register(context, EXTRA_END_ISLAND_KEY, ModFeatures.EXTRA_END_ISLAND.get(),
         //        new StructuralFeatureConfiguration(list, list1, holder, holdergetter1.getOrThrow(ModProcessorLists.END_CRYSTAL_ADDITION), 4));

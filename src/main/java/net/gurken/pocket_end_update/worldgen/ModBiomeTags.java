@@ -8,6 +8,7 @@ import net.minecraft.world.level.biome.Biome;
 
 public class ModBiomeTags {
     public static final TagKey<Biome> IS_OUTER_END = create("is_outer_end");
+    public static final TagKey<Biome> IS_OUTER_ISLAND = create("is_outer_island");
 
     private ModBiomeTags() {
     }
