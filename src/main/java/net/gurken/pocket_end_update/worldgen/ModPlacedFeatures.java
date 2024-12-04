@@ -1,14 +1,16 @@
 package net.gurken.pocket_end_update.worldgen;
 
 import net.gurken.pocket_end_update.PocketEndUpdate;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.BiasedToBottomInt;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -33,9 +35,13 @@ public class ModPlacedFeatures {
                 List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
         register(context, END_CRYSTALS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_CRYSTALS_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(5), VerticalAnchor.aboveBottom(35)),
-                        BlockPredicateFilter.forPredicate(BlockPredicate.solid(new Vec3i(0, 1, 0))),
+                List.of(RarityFilter.onAverageOnceEvery(4),
+                        InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(5), VerticalAnchor.aboveBottom(25)),
+                        CountPlacement.of(10),
+                        RandomOffsetPlacement.of(BiasedToBottomInt.of(0,2), ConstantInt.of(0)),
+                        EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.hasSturdyFace(Direction.DOWN), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12),
+                        RandomOffsetPlacement.of(ConstantInt.of(0), ConstantInt.of(-1)),
                         BiomeFilter.biome()));
 
         //register(context, EXTRA_END_ISLAND_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EXTRA_END_ISLAND_KEY),

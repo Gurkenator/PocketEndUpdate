@@ -48,13 +48,12 @@ public class ModConfiguredFeatures {
                 new RandomPatchConfiguration(32, 6, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                         new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CHORALITE_ACCUMULATION.get())))));
 
-        register(context, END_CRYSTALS_KEY, Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(24, 2, 2, PlacementUtils.onlyWhenEmpty(Feature.BLOCK_COLUMN,
-                        new BlockColumnConfiguration(List.of(BlockColumnConfiguration
+        register(context, END_CRYSTALS_KEY, Feature.BLOCK_COLUMN,
+                new BlockColumnConfiguration(List.of(BlockColumnConfiguration
                         .layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
-                        .add(UniformInt.of(3, 6), 2).build()),
+                        .add(UniformInt.of(2, 4), 2).build()),
                                 BlockStateProvider.simple(ModBlocks.END_CRYSTAL.get().defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Y)))),
-                                Direction.DOWN, BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, 0, 0), List.of(Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR))),false))));
+                                Direction.DOWN, BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, 0, 0), List.of(Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR))),false));
 
                                 //BlockPredicate.matchesBlocks(new Vec3i(0, 1, 0), List.of(Blocks.END_STONE, ModBlocks.END_CRYSTAL_ORE.get(), ModBlocks.END_CRYSTAL.get())),false))));
                                 //BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, 0, 0), List.of(Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR))),true))));
