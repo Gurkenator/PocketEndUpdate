@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "pocket_end_update:eulium_planks"
+    }
+  ],
+  "result": {
+    "item": "pocket_end_update:eulium_button"
+  }
+}

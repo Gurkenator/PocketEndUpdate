@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "pocket_end_update:block/eulium_door_bottom",
+    "top": "pocket_end_update:block/eulium_door_top"
+  }
+}

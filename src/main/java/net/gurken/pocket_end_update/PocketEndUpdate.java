@@ -3,6 +3,7 @@ package net.gurken.pocket_end_update;
 import com.mojang.logging.LogUtils;
 import net.gurken.pocket_end_update.alchemy.ModPotionBrewing;
 import net.gurken.pocket_end_update.block.ModBlocks;
+import net.gurken.pocket_end_update.block.entity.ModBlockEntities;
 import net.gurken.pocket_end_update.entity.ModEntities;
 import net.gurken.pocket_end_update.entity.client.EnderruinRenderer;
 import net.gurken.pocket_end_update.init.ModFeatures;
@@ -10,6 +11,8 @@ import net.gurken.pocket_end_update.item.ModItemProperties;
 import net.gurken.pocket_end_update.item.ModItems;
 import net.gurken.pocket_end_update.item.custom.ModPotions;
 import net.gurken.pocket_end_update.util.ModBrewingRecipe;
+import net.gurken.pocket_end_update.util.ModWoodTypes;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
@@ -63,6 +66,9 @@ public class PocketEndUpdate
         //Register Entities
         ModEntities.register(modEventBus);
 
+        //Register Block Entities
+        ModBlockEntities.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -85,6 +91,7 @@ public class PocketEndUpdate
             event.accept(ModItems.ENDERITE_INGOT);
             event.accept(ModItems.ENDERFERENCE_CRYSTAL);
             event.accept(ModItems.CRACKED_CHORALITE_KERNEL);
+            event.accept(ModItems.END_CRYSTAL_SHARD);
             event.accept(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE);
             event.accept(ModItems.SAIL_ARMOR_TRIM_SMITHING_TEMPLATE);
         }
@@ -97,13 +104,39 @@ public class PocketEndUpdate
             event.accept(ModBlocks.INDIGO_PANEL);
             event.accept(ModBlocks.INDIGO_STAIRS);
             event.accept(ModBlocks.INDIGO_SLAB);
+            event.accept(ModBlocks.END_CRYSTAL);
+            event.accept(ModBlocks.EULIUM_ROOT);
+            event.accept(ModBlocks.EULIUM_NODULE);
+            event.accept(ModBlocks.STRIPPED_EULIUM_ROOT);
+            event.accept(ModBlocks.STRIPPED_EULIUM_NODULE);
+            event.accept(ModBlocks.EULIUM_PLANKS);
+            event.accept(ModBlocks.EULIUM_STAIRS);
+            event.accept(ModBlocks.EULIUM_SLAB);
+            event.accept(ModBlocks.EULIUM_FENCE);
+            event.accept(ModBlocks.EULIUM_FENCE_GATE);
+            event.accept(ModBlocks.EULIUM_DOOR);
+            event.accept(ModBlocks.EULIUM_TRAPDOOR);
+            event.accept(ModBlocks.EULIUM_PRESSURE_PLATE);
+            event.accept(ModBlocks.EULIUM_BUTTON);
+            event.accept(ModBlocks.GREENSTONE);
+            event.accept(ModBlocks.GREENSTONE_WALL);
         }
 
     if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.EULIUM_ROOT);
+            event.accept(ModBlocks.EULIUM_FIBERS);
+            event.accept(ModBlocks.EULIUM_TUBER);
             event.accept(ModBlocks.END_CRYSTAL);
             event.accept(ModBlocks.CHORALITE_ACCUMULATION);
             event.accept(ModItems.CHORALITE_SPORES);
             event.accept(ModBlocks.END_CRYSTAL_ORE);
+        }
+
+    if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(ModBlocks.END_CRYSTAL);
+            event.accept(ModBlocks.DRAGON_LANTERN);
+            event.accept(ModItems.EULIUM_SIGN.get());
+            event.accept(ModItems.EULIUM_HANGING_SIGN.get());
         }
 
     if(event.getTabKey() == CreativeModeTabs.COMBAT) {
@@ -135,6 +168,8 @@ public class PocketEndUpdate
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.ENDERRUIN.get(), EnderruinRenderer::new);
             event.enqueueWork(() -> {
+                Sheets.addWoodType(ModWoodTypes.EULIUM);
+
                 ModItemProperties.addCustomItemProperties();
             });
         }

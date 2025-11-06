@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "pocket_end_update:block/indigo_pillar_top",
+    "side": "pocket_end_update:block/indigo_pillar"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "pocket_end_update:block/eulium_pressure_plate"
+    },
+    "powered=true": {
+      "model": "pocket_end_update:block/eulium_pressure_plate_down"
+    }
+  }
+}

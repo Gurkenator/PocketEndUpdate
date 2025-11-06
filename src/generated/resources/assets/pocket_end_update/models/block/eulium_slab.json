@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "pocket_end_update:block/eulium_planks",
+    "side": "pocket_end_update:block/eulium_planks",
+    "top": "pocket_end_update:block/eulium_planks"
+  }
+}

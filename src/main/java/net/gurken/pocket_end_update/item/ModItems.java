@@ -8,9 +8,7 @@ import net.gurken.pocket_end_update.item.custom.EnderiteCrossbowItem;
 import net.gurken.pocket_end_update.item.custom.ModFoods;
 import net.gurken.pocket_end_update.item.custom.ModSmithingTemplateItem;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.SmithingTemplateItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,6 +29,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFoods.CHORALITE_KERNEL)));
     public static final RegistryObject<Item> CRACKED_CHORALITE_KERNEL = ITEMS.register("cracked_choralite_kernel",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> END_CRYSTAL_SHARD = ITEMS.register("end_crystal_shard",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<ItemNameBlockItem> CHORALITE_SPORES = ITEMS.register("choralite_spores",
             () -> new ItemNameBlockItem(ModBlocks.CHORALITE_GROWTH.get(), new Item.Properties()));
     public static final RegistryObject<Item> ENDERITE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("enderite_upgrade_smithing_template",
@@ -47,6 +47,12 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERRUIN_SPAWN_EGG = ITEMS.register("enderruin_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.ENDERRUIN, 0xeef8bf, 0x54508f,
                     new Item.Properties()));
+
+    public static final RegistryObject<Item> EULIUM_SIGN = ITEMS.register("eulium_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.EULIUM_SIGN.get(), ModBlocks.EULIUM_WALL_SIGN.get()));
+    public static final RegistryObject<Item> EULIUM_HANGING_SIGN = ITEMS.register("eulium_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.EULIUM_HANGING_SIGN.get(), ModBlocks.EULIUM_WALL_HANGING_SIGN.get(),
+                    new Item.Properties().stacksTo(16)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

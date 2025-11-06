@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "pocket_end_update:block/stripped_eulium_nodule_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "pocket_end_update:block/stripped_eulium_nodule"
+    },
+    "axis=z": {
+      "model": "pocket_end_update:block/stripped_eulium_nodule_horizontal",
+      "x": 90
+    }
+  }
+}

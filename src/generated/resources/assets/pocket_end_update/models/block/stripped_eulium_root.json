@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "pocket_end_update:block/stripped_eulium_root_top",
+    "side": "pocket_end_update:block/stripped_eulium_root"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": {
+      "item": "pocket_end_update:cracked_choralite_kernel"
+    },
+    "B": {
+      "item": "pocket_end_update:end_crystal_shard"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BBB",
+    "ABA"
+  ],
+  "result": {
+    "item": "pocket_end_update:end_crystal"
+  },
+  "show_notification": true
+}

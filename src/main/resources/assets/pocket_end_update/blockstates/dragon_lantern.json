@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "pocket_end_update:block/dragon_lantern"
+    },
+    "hanging=true": {
+      "model": "pocket_end_update:block/dragon_lantern_hanging"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "pocket_end_update:block/eulium_planks"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "A": {
+      "item": "pocket_end_update:eulium_planks"
+    }
+  },
+  "pattern": [
+    "AA"
+  ],
+  "result": {
+    "item": "pocket_end_update:eulium_pressure_plate"
+  },
+  "show_notification": true
+}
