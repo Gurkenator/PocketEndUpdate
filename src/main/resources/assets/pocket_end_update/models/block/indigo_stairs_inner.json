@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "pocket_end_update:block/indigo_block",
-    "top": "pocket_end_update:block/indigo_block",
-    "side": "pocket_end_update:block/indigo_block"
-  }
-}
